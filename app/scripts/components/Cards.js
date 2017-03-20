@@ -31,30 +31,37 @@ var Cards = React.createClass({
 			data = props.data || [];
 
 		return(
-			<div className="cards" ref='cardref'>
+			<div className="cards row" ref='cardref'>
 				{
 					data && data.map(function(elm,index){
-						return  <div className="card" key={index}>
-									<div className="desc">
-										{elm.description}
+						return  <div className="card col-xs-12" key={index}>
+									<div className="desc row">
+										<div className="col-xs-4">Description:</div>
+										<div className="col-xs-8">{elm.description}</div>
 									</div>	
-									<div className="username">{elm.userName}</div>	
-									<div className="status">{elm.status}</div>	
+									<div className="username row">
+										<div className="col-xs-4">User Tagged:</div>
+										<div className="col-xs-8">{elm.userName}</div>
+									</div>	
+									<div className="status row">
+										<div className="col-xs-4">Status:</div>
+										<div className="col-xs-8">{elm.status}</div>
+									</div>	
 									<span className="dropdown">
-									  <button className="btn btn-primary dropdown-toggle three-dots" type="button" data-toggle="dropdown">...
-									  <span className="caret"></span></button>
+									  <button className="btn btn-primary dropdown-toggle more-opts" type="button" data-toggle="dropdown">More Options
+									  </button>
 									  <ul className="dropdown-menu">
-									    <li onClick={this.showEditCard.bind(this,elm)} >
+									    <li className="li-options" onClick={this.showEditCard.bind(this,elm)} >
 									    	<span >
 												<span className="glyphicon glyphicon-pencil"  aria-hidden="true">Edit Card</span>
 								    		</span>
 							    		</li>
-							    		<li onClick={this.moveCard.bind(this,elm)} >
+							    		<li className="li-options" onClick={this.moveCard.bind(this,elm)} >
 									    	<span>
 									    		<span className="glyphicon glyphicon-remove"  aria-hidden="true">Move Card</span>
 											</span>
 								    	</li>
-									    <li onClick={this.showDelConfirm.bind(this,elm)} >
+									    <li className="li-options" onClick={this.showDelConfirm.bind(this,elm)} >
 									    	<span>
 									    		<span className="glyphicon glyphicon-remove"  aria-hidden="true">Delete</span>
 											</span>

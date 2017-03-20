@@ -20,7 +20,7 @@ var MoveCardModal = React.createClass({
   },
   getInitialState: function() {
     return {
-      moveTo:0
+      moveTo:1
     };
   },
   componentDidMount: function() {

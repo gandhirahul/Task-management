@@ -43,43 +43,46 @@ var ListView = React.createClass({
 					lists.map(function(elm,index){
 						var data = cards[elm.id];
 
-						return <div className="list col-xs-4" key={index}>
+						return <div className="list col-xs-12 col-sm-4" key={index}>
 									<div className="list-sec">
 										<div className="list-title">
 											{
 												this.state.editID === elm.id
 												?
 												<input  type="title"
-														className="form-control" 
+														className="form-control edit-input" 
 														onChange={this._handleChange}
 														value={this.state.titleValue}
 														id="title" 
 														onKeyDown={this.handleKeyDown}  />
 												:
-												<div>
-													{elm.title}
-													<span className="dropdown">
+												<div className="row">
+													<div className="col-xs-10 elm-title">{elm.title}</div>
+													<div className="col-xs-2 dropdown list-dropdown">
 													  <button className="btn btn-primary dropdown-toggle three-dots" type="button" data-toggle="dropdown">...
 													  <span className="caret"></span></button>
-													  <ul className="dropdown-menu">
-													    <li onClick={this.editList.bind(this,elm)} >
+													  <ul className="dropdown-menu" >
+													    <li className="li-options" onClick={this.editList.bind(this,elm)} >
 													    	<span >
-																<span className="glyphicon glyphicon-pencil"  aria-hidden="true">Edit Title</span>
+																<span className="glyphicon icons-list glyphicon-pencil"  aria-hidden="true"></span>
+																Edit Title
 												    		</span>
 											    		</li>
 											    		
-											    		<li onClick={this.showAddCardModal.bind(this,elm)} >
+											    		<li className="li-options" onClick={this.showAddCardModal.bind(this,elm)} >
 													    	<span>
-													    		<span className="glyphicon glyphicon-plus"  aria-hidden="true">Add Card</span>
+													    		<span className="glyphicon icons-list glyphicon-plus"  aria-hidden="true"></span>
+													    		Add Card
 															</span>
 												    	</li>
-													    <li onClick={this.showDelConfirm.bind(this,elm)} >
+													    <li className="li-options" onClick={this.showDelConfirm.bind(this,elm)} >
 													    	<span>
-													    		<span className="glyphicon glyphicon-remove"  aria-hidden="true">Delete</span>
+													    		<span className="glyphicon icons-list glyphicon-remove"  aria-hidden="true"></span>
+													    		Delete
 															</span>
 												    	</li>
 													  </ul>
-													</span>
+													</div>
 												</div>
 											}
 										</div>

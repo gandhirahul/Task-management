@@ -15,7 +15,8 @@ var TaskManagement = React.createClass({
     
     var state = {
       lists: [],
-      cards: {}
+      cards: {},
+      count_id:1
     };
 
     var savedState = this._getCookie(); // Fetching data from cookie.
@@ -26,6 +27,7 @@ var TaskManagement = React.createClass({
     return {
       lists: state.lists,
       cards: state.cards,
+      count_id:state.count_id,
       view: {showModal: false}
     };
   },
@@ -64,9 +66,17 @@ var TaskManagement = React.createClass({
      * @Props
      * @param {string} title - Title of new list 
      */
-    var newList = {'title':title,id: this.state.lists.length };
+    var count_id = this.state.count_id;
+    var newList = {'title':title,id: count_id };
+    
     var lists = this.state.lists.concat(newList);
-    this.updateList(lists);   
+    
+    this.setState({
+      count_id: count_id + 1
+    },function(){
+      this.updateList(lists); // Saving to cookie only when the state has been udpated.
+    })
+    
   },
   editList:function(list){
     /**

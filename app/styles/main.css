@@ -24,7 +24,6 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-  /* Make the masthead heading the same height as the navigation */
 }
 
 .header h3 {
@@ -45,7 +44,6 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
@@ -61,17 +59,12 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-  /* Remove the padding we set earlier */
   .header,
   .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
   }
-  /* Space out the masthead */
   .header {
     margin-bottom: 30px;
   }
@@ -136,27 +129,71 @@ button.create-card:hover {
 }
 .list{
   min-height: 220px;
-  padding:10px;
-  
+  padding: 20px;
 }
 .list-sec{
   background: lavender;
 }
 .list-title{
+    background: #6e9ecf;
+    color: black;
+}
+.list-dropdown{
+  background: #6e9ecf;
+}
+.edit-input{
+  height: 50px;
+  border: 1px solid #6e9ecf;
+}
+.elm-title{
     height: 50px;
     line-height: 50px;
-    border: 1px solid black;
+    background: #6e9ecf;
+    color: white;
 }
 .list .three-dots{
-  padding:0;
-  float: right;
+    padding: 0 12px;
+    // float: right;
+    height: 50px;
+    line-height: 50px;
+    background: #6e9ecf;
+    color: white;
+    border: 0 ;
+    border-radius: 0;
+}
+.li-options{
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.li-options:hover{
+  background: rgba(0, 0, 0, .1);
+}
+.icons-list{
+  font-size: 12px;
+  margin-right: 5px;
 }
 /* Card Page CSS */
+.cards{
+    height: 300px;
+    background: #EBEBE4;
+    overflow-y: scroll;
+}
 .card{
     // margin: 10px 0;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     padding: 5px;
     background: aliceblue;
 }
-
+.more-opts{
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  background: rgba(110, 158, 207, .5);
+  color: white;
+  border: 0;
+  border-radius: 0;
+}
+.more-opts:hover{
+  background: #6e9ecf;
+}
 
