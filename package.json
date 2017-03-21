@@ -2,7 +2,12 @@
   "name": "task-management",
   "version": "0.0.0",
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "node server.js"
   },
   "devDependencies": {
     "browserify": "latest",
@@ -35,9 +40,6 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "jest"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
