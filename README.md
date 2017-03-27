@@ -1,5 +1,5 @@
 # Task-management
-A task management application build with react A task management application build with rea
+A task management application build with react
 
 To watch a live version : https://fierce-lake-33874.herokuapp.com/
 
